@@ -1,15 +1,32 @@
-<form action="" style="width: 20rem;" >
-
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+          <div class="container text-center">
+            <img src="../../../assets/logo1.png" alt="" height="120px" width="auto">
+          </div>
+          <h1 class="text-center">Log In</h1>
+  
+          <form action="" class="mx-auto">
+  
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Enter Password" type="password" required>
+            </mat-form-field>
+  
+        <div class="container text-center">
+          <button mat-raised-button color="primary">Log In</button>
+        </div>
+          </form>
+        </mat-card>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password">
-      </div>
-      <button type="button" class="btn btn-success" style="margin-left: 100px;">Login</button>
-      
-
-
-</form>
+    </div>
+  </div>

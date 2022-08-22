@@ -1,31 +1,84 @@
-<form action="" style="width: 20rem;" >
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-md-6 offset-md-3">
+      <mat-card>
+        <div class="container text-center">
+          <img src="../../../assets/logo1.png" alt="" height="120px" width="auto">
+        </div>
+        <h1 class="text-center">Register Here</h1>
 
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Mobile</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="+91">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">City</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="City">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Qualification</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Qualification">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Year of Completion</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Year">
-      </div>
-      <button type="button" class="btn btn-success" style="margin-left: 100px;">Register</button>
-      
+        <form action="" class="mx-auto">
 
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Enter Full Name" required>
+          </mat-form-field>
 
-</form>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter Password" type="password" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Mobile</mat-label>
+            <input matInput placeholder="Enter Mobile Number" required>
+          </mat-form-field> -->
+
+          <div class="text-center">
+            <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+          <input matInput placeholder="Mobile" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+          <input matInput placeholder="City" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+          <input matInput placeholder="State" required>
+        </mat-form-field>
+      </div>
+
+          
+
+          <div class="text-center">
+          <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="getFloatLabelValue()">
+        <input matInput placeholder="Qualification" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="getFloatLabelValue()">
+        <input matInput placeholder="Year of Completion" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="getFloatLabelValue()">
+        <input matInput placeholder="Date of Birth" required>
+      </mat-form-field>
+    </div>
+
+      <div class="container text-center">
+        <button mat-raised-button color="primary">Register</button>
+      </div>
+        </form>
+      </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
