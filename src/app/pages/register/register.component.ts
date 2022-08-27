@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,Validators } from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
 import {FloatLabelType} from '@angular/material/form-field';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +20,7 @@ export class RegisterComponent implements OnInit {
     floatLabel: this.floatLabelControl,
   });
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,private userService: UserService,private router:Router) { }
 
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
@@ -34,7 +36,50 @@ export class RegisterComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
+  public user={
+    username:"",
+    password:"",
+    firstName:"",
+    middleName:"",
+    lastName:"",
+    email:"",
+    phone:"",
+    city:"",
+    state:"",
+    qualification:"",
+    year_of_completion:"",
+    dob:"",
+  };
+
   ngOnInit(): void {
   }
+
+  formSubmit(){
+    if(this.user.email=='' ||this.user.username==''||this.user.password=='')
+    {
+      alert('Please fill required fiels');
+      return;
+    }
+       // console.log(this.user);
+
+
+    //add user:userservice
+
+    this.userService.addUser(this.user).subscribe(
+      (data)=>{
+        //success
+        console.log(data);
+        alert('success');
+        this.router.navigate(['']);
+      },
+      (error) =>{
+        //error
+        console.log(error);
+      }
+
+    )
+  }
+  
+  
 
 }

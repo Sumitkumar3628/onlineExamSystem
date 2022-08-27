@@ -1,0 +1,79 @@
+{
+  "user": [
+    {
+      "username": "sukanya123",
+      "password": "1223",
+      "firstName": "sukanya",
+      "middleName": "kjbjh",
+      "lastName": "pandit",
+      "email": "pat@gmail.com",
+      "phone": "987505655",
+      "city": "gaya",
+      "state": "bihar",
+      "qualification": "shbdhjsbh",
+      "year_of_completion": "2022",
+      "dob": "2022-08-27",
+      "id": 1
+    },
+    {
+      "username": "sumit123",
+      "password": "jhsdkjchsdc",
+      "firstName": "sumit",
+      "middleName": "xyz",
+      "lastName": "kjshiusdh",
+      "email": "sumit@gmailcom",
+      "phone": "97854223",
+      "city": "ranchi",
+      "state": "india",
+      "qualification": "jhgsakujxsa",
+      "year_of_completion": "2022",
+      "dob": "2022-08-27",
+      "id": 2
+    },
+    {
+      "username": "suraj123",
+      "password": "12345",
+      "firstName": "suraj",
+      "middleName": "",
+      "lastName": "soni",
+      "email": "suraj@gmail.com",
+      "phone": "9870100000",
+      "city": "patna",
+      "state": "bihar",
+      "qualification": "btech",
+      "year_of_completion": "2022",
+      "dob": "2022-08-27",
+      "id": 3
+    },
+    {
+      "username": "xyz123",
+      "password": "dchgjn",
+      "firstName": "xyz",
+      "middleName": "kxssx",
+      "lastName": "sharma",
+      "email": "pat@gmail.com",
+      "phone": "5623.",
+      "city": "",
+      "state": "",
+      "qualification": "",
+      "year_of_completion": "",
+      "dob": "",
+      "id": 4
+    },
+    {
+      "username": "sukanya234",
+      "password": "fcgvhbjnm.,",
+      "firstName": "sukanya",
+      "middleName": "",
+      "lastName": "pandit",
+      "email": "sukanya@gmail.com",
+      "phone": "5455454",
+      "city": "gaya",
+      "state": "bihar",
+      "qualification": "btech",
+      "year_of_completion": "2022",
+      "dob": "2022-08-27",
+      "id": 5
+    }
+  ]
+}

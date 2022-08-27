@@ -7,74 +7,111 @@
           <img src="../../../assets/logo1.png" alt="" height="120px" width="auto">
         </div>
         <h1 class="text-center">Register Here</h1>
-
-        <form action="" class="mx-auto">
-
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Full Name</mat-label>
-            <input matInput placeholder="Enter Full Name" required>
-          </mat-form-field>
-
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Enter Password" type="password" required>
-          </mat-form-field>
+<!-- {{user|json}} -->
+        <form (ngSubmit)="formSubmit()" action="" class="mx-auto">
 
           <!-- <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Mobile</mat-label>
-            <input matInput placeholder="Enter Mobile Number" required>
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Enter Full Name" required>
           </mat-form-field> -->
 
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>UserName</mat-label>
+            <input [(ngModel)]="user.username" 
+            name="username" matInput placeholder="Enter UserName" type="text" required>
+            <mat-hint>UserName must be unique!!</mat-hint>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input [(ngModel)]="user.password" 
+            name="password" matInput placeholder="Enter Password" type="password" required>
+          </mat-form-field>
+
+
+         <div class="text-center">
+             
+        <mat-form-field appearance="outline"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+            <mat-label>FirstName</mat-label>
+          <input input [(ngModel)]="user.firstName" name="firstName" matInput placeholder="FirstName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" 
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+            <mat-label>MiddleName</mat-label>
+          <input input [(ngModel)]="user.middleName" name="middeleName" matInput placeholder="MiddleName" >
+        </mat-form-field>
+  
+  
+        <mat-form-field appearance="outline"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="getFloatLabelValue()">
+            <mat-label>LastName</mat-label>
+
+          <input input [(ngModel)]="user.lastName" name="lastName" matInput placeholder="LastName" required>
+        </mat-form-field>
+               
+</div>
+
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Email</mat-label>
+  <input [(ngModel)]="user.email" name="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
+          
           <div class="text-center">
-            <mat-form-field appearance="fill"
+            <mat-form-field appearance="outline"
             [hideRequiredMarker]="hideRequiredControl.value"
             [floatLabel]="getFloatLabelValue()">
-          <input matInput placeholder="Mobile" required>
+            <mat-label>Mobile</mat-label>
+          <input input [(ngModel)]="user.phone" name="phone"  matInput placeholder="Mobile" required>
         </mat-form-field>
   
-        <mat-form-field appearance="fill"
+        <mat-form-field appearance="outline"
             [hideRequiredMarker]="hideRequiredControl.value"
             [floatLabel]="getFloatLabelValue()">
-          <input matInput placeholder="City" required>
+            <mat-label>City</mat-label>
+          <input input [(ngModel)]="user.city" name="city" matInput placeholder="City" required>
         </mat-form-field>
   
-        <mat-form-field appearance="fill"
+        <mat-form-field appearance="outline"
             [hideRequiredMarker]="hideRequiredControl.value"
             [floatLabel]="getFloatLabelValue()">
-          <input matInput placeholder="State" required>
+            <mat-label>State</mat-label>
+          <input input [(ngModel)]="user.state" name="state" matInput placeholder="State" required>
         </mat-form-field>
       </div>
 
           
 
           <div class="text-center">
-          <mat-form-field appearance="fill"
+          <mat-form-field appearance="outline"
           [hideRequiredMarker]="hideRequiredControl.value"
           [floatLabel]="getFloatLabelValue()">
-        <input matInput placeholder="Qualification" required>
+          <mat-label>Qualification</mat-label>
+        <input input [(ngModel)]="user.qualification" name="qualification" matInput placeholder="Qualification" required>
       </mat-form-field>
 
-      <mat-form-field appearance="fill"
+      <mat-form-field appearance="outline"
           [hideRequiredMarker]="hideRequiredControl.value"
           [floatLabel]="getFloatLabelValue()">
-        <input matInput placeholder="Year of Completion" required>
+          <mat-label>Year of Completion</mat-label>
+        <input input [(ngModel)]="user.year_of_completion" name="year_of_completion" matInput placeholder="Year of Completion" type="text" required>
       </mat-form-field>
 
-      <mat-form-field appearance="fill"
+      <mat-form-field appearance="outline"
           [hideRequiredMarker]="hideRequiredControl.value"
           [floatLabel]="getFloatLabelValue()">
-        <input matInput placeholder="Date of Birth" required>
+          <mat-label>DOB</mat-label>
+        <input input [(ngModel)]="user.dob" name="dob" matInput placeholder="Date of Birth" type="date" required>
       </mat-form-field>
     </div>
 
       <div class="container text-center">
-        <button mat-raised-button color="primary">Register</button>
+        <button type="submit" mat-raised-button color="primary">Register</button>
       </div>
         </form>
       </mat-card>
