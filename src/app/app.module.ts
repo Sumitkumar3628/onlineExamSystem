@@ -21,6 +21,8 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import {MatListModule} from '@angular/material/list';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     DashboardComponent,
     SidebarComponent,
     ProfileComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent]
