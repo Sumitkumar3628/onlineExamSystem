@@ -17,6 +17,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    SidebarComponent,
+    ProfileComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
