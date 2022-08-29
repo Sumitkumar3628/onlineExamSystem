@@ -24,6 +24,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import {MatListModule} from '@angular/material/list';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { RemoveQuestionComponent } from './pages/admin/remove-question/remove-question.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SidebarComponent,
     ProfileComponent,
     UserDashboardComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AddQuestionComponent,
+    RemoveQuestionComponent
   ],
   imports: [
     BrowserModule,

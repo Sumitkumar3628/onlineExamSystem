@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
     { 
     path:'profile',
     component:ProfileComponent
-  }]}
+  }]},
+  {path:'user-dashboard',component:UserDashboardComponent},
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
-import { ArrayType } from '@angular/compiler';
+import { ArrayType, ConditionalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { user } from '../../user';
 
@@ -17,14 +18,15 @@ export class LoginComponent implements OnInit {
   }
   u:user;
   abc=Array();
+  role: Object;
 
-  constructor(private login:LoginService) { }
+  constructor(private login:LoginService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
  
- 
+ token:string;
 
   loginSubmit(){
     // alert('logged in');
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
    this.login.generateToken(this.loginData).subscribe((data)=>
    {
       console.log('success');
-      console.log(data);
+      console.log(JSON.stringify(data));
     //  console.log(this.loginData);
     //  this.login.getUserDetails(this.loginData).subscribe((res:user[])=>{
     //   Array.from(res).forEach(element=>{
@@ -65,13 +67,23 @@ export class LoginComponent implements OnInit {
       this.u=data;
       console.log(this.u);
     })
+    this.login.isAdmin(this.loginData).subscribe((data)=>{
+      this.role = data;
+      console.log(typeof(data)+" "+data);
+      if(this.role==true){
+        this.router.navigate(['admin']);
+      }else{
+        this.router.navigate(['user-dashboard']);
+      }
+    })
+    
      
      
         
   },
   (error) =>
   {
-    console.log('something went wrong');
+    console.log(error);
      
   }
   ); 

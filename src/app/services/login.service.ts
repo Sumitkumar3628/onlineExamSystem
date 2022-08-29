@@ -28,16 +28,25 @@ export class LoginService {
     return this.httpser.get(this.url + 'login/getuser/'+loginData.username);
  }
 
+ public isAdmin(loginData:any){
+  return this.httpser.get(this.url+'login/isadmin/'+loginData.username);
+ }
+
 
 
  //login user
  public loginUser(token:any){
-  if(token=="true"){
+  if(token=="ADMIN"){
     localStorage.setItem('token',token);
     console.log(token);
     return true;
   }
-  console.log("token not varified");
+  if(token=="USER"){
+    localStorage.setItem('token',token);
+    console.log(token);
+    return true;
+  }
+  console.log("token not varified"); 
   return false;
  }
 
