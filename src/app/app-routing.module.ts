@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import { SelectExamComponent } from './pages/user/user-dashboard/select-exam/select-exam.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
@@ -39,7 +41,9 @@ const routes: Routes = [
   }
 ]},
   {path:'user-dashboard',component:UserDashboardComponent},
-  {path:'new-exam',component:SelectExamComponent}
+  {path:'new-exam',component:SelectExamComponent},
+  {path:'start-exam',component:StartExamComponent},
+  {path:'load-quiz',component:LoadQuizComponent}
 ];
 
 @NgModule({

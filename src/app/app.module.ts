@@ -29,6 +29,7 @@ import { RemoveQuestionComponent } from './pages/admin/remove-question/remove-qu
 import { ViewReportComponent } from './pages/admin/view-report/view-report.component';
 import { SelectExamComponent } from './pages/user/user-dashboard/select-exam/select-exam.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { StartExamComponent } from './pages/user/start-exam/start-exam.component
     RemoveQuestionComponent,
     ViewReportComponent,
     SelectExamComponent,
-    StartExamComponent
+    StartExamComponent,
+    LoadQuizComponent
   ],
   imports: [
     BrowserModule,
