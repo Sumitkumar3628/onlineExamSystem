@@ -23,6 +23,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import {MatListModule} from '@angular/material/list';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent]

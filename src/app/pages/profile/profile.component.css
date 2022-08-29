@@ -6,10 +6,10 @@
 }
 .table{
     width: 100%;
-    border: .5px solid gray;
+    border: .5px solid rgb(219, 213, 213);
     border-collapse: collapse;
 }
 .table tr td{
     padding: 10px 15px;
-    border: .5px solid gray;
+    border: .5px solid rgb(219, 213, 213);
 }

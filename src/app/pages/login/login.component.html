@@ -7,18 +7,17 @@
             <img src="../../../assets/logo1.png" alt="" height="120px" width="auto">
           </div>
           <h1 class="text-center">Log In</h1>
-  
-          <form action="" class="mx-auto">
+          {{ loginData | json }}
+          <form action="" class="mx-auto" (ngSubmit)="loginSubmit()">
   
             <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Enter your email</mat-label>
-              <input matInput placeholder="pat@example.com" [formControl]="email" required>
-              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              <mat-label>Enter Username</mat-label>
+              <input [(ngModel)]="loginData.username" name="username" matInput placeholder="Enter Username" required>
             </mat-form-field>
   
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Enter Password" type="password" required>
+              <input [(ngModel)]="loginData.password" name="password" matInput placeholder="Enter Password" type="password" required>
             </mat-form-field>
   
         <div class="container text-center">
