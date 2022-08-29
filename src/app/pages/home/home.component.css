@@ -1,0 +1,10 @@
+#welcome{
+    background-image :linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),  URL("../../../assets/img3.jpg");
+    background-size: cover;
+}
+.header{
+    color: white;
+    text-decoration: solid;
+    font-size: 100px;
+    text-align: center;
+}

@@ -26,6 +26,9 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { RemoveQuestionComponent } from './pages/admin/remove-question/remove-question.component';
+import { ViewReportComponent } from './pages/admin/view-report/view-report.component';
+import { SelectExamComponent } from './pages/user/user-dashboard/select-exam/select-exam.component';
+import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { RemoveQuestionComponent } from './pages/admin/remove-question/remove-qu
     UserDashboardComponent,
     WelcomeComponent,
     AddQuestionComponent,
-    RemoveQuestionComponent
+    RemoveQuestionComponent,
+    ViewReportComponent,
+    SelectExamComponent,
+    StartExamComponent
   ],
   imports: [
     BrowserModule,
