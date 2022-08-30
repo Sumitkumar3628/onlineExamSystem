@@ -66,6 +66,11 @@ export class LoginComponent implements OnInit {
     this.login.getUserDetails(this.loginData).subscribe((data)=>{
       this.u=data;
       console.log(this.u);
+      console.log(typeof(this.u))
+      if(this.u==null){
+        alert('Invalid Credentials');
+        this.router.navigate(['']);
+      }
     })
     this.login.isAdmin(this.loginData).subscribe((data)=>{
       this.role = data;

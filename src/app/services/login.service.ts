@@ -92,6 +92,19 @@ export class LoginService {
  public getUserRole(){
   let user = this.getUser();
 
+
  }
+ /*
+ token:any;
+ public checkLogin(){
+  this.token = this.gettoken();
+  if(this.token==null){
+    alert('token is null');
+    return false;
+  }else{
+    alert('token has value');
+    return true;
+  }
+ }*/
 
 }
