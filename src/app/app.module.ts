@@ -30,6 +30,8 @@ import { ViewReportComponent } from './pages/admin/view-report/view-report.compo
 import { SelectExamComponent } from './pages/user/user-dashboard/select-exam/select-exam.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { GetQuestionsComponent } from './services/get-questions/get-questions.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
     ViewReportComponent,
     SelectExamComponent,
     StartExamComponent,
-    LoadQuizComponent
+    LoadQuizComponent,
+    GetQuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
     MatCardModule,
     HttpClientModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatRadioModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent]

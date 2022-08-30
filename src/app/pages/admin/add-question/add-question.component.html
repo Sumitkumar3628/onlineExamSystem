@@ -1,28 +1,49 @@
 <h1>Add Question</h1>
-<mat-card>
-    <u><h3>Select Category</h3></u>
-  <input type="radio" id="java" name="category" value="Java"> 
-  <label for="java">Java</label>
+{{ques|json}}
+<div class="container">
+    <div class="row">
+    <div class="col-md-6">
+        <mat-card>
+        <h4>Select Category</h4>
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="category">
+            <mat-radio-button value="23"> Java</mat-radio-button>
+            <mat-radio-button value="26"> Sql</mat-radio-button>
+            <mat-radio-button value="27"> Python</mat-radio-button>
+            <mat-radio-button value="28"> C</mat-radio-button>
+          </mat-radio-group>
+          {{category}}
+        </mat-card>
+    </div>
+    <div class="col-md-6">
+        <mat-card >
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="level">
+                <h4>Select Label</h4>
+                <mat-radio-button value="1">Level 1</mat-radio-button> <!--have to change the value according to id generated in backend-->
+                <mat-radio-button value="2"> Level 2</mat-radio-button>
+                <mat-radio-button value="3">Level 3</mat-radio-button>
+              </mat-radio-group>
+              {{level}}
+         </mat-card>
+    </div>
+</div>
+</div>
 
-  <input type="radio" id="SQL" name="category" value="SQL">
-  <label for="SQL">SQL</label>
-
-<input type="radio" id="Python" name="category" value="Python" style="margin: 5px;">
-  <label for="SQL">Python</label>
-
-<input type="radio" id="C" name="category" value="C">
-  <label for="C">C</label>
-</mat-card><br>
-
-<mat-card>
+<form action="" (ngSubmit)="submitQuestion()">
+<mat-card style="margin: 10px;">
 <div class="component text-center" >
-<textarea name="" id="" cols="100" rows="10" placeholder="Type Question here"></textarea><br>
-<input type="text" placeholder="Option 1" style="margin: 5px;">
-<input type="text" placeholder="Option 2"style="margin: 5px;"><br>
-<input type="text" placeholder="Option 3" style="margin: 5px;">
-<input type="text" placeholder="Option 4" style="margin: 5px;"><br>
-<input type="text" placeholder="Answer" style="margin: 5px;"><br>
-<button mat-raised-button color="primary" style="margin-top: 15px;">Add</button>
+<textarea [(ngModel)]="ques.content" name="content" id="" cols="100" rows="10" placeholder="Type Question here" ></textarea><br>
+<input [(ngModel)]="ques.option1" name="option1" type="text" placeholder="Option 1" style="margin: 5px;">
+<input [(ngModel)]="ques.option2" name="option2" type="text" placeholder="Option 2"style="margin: 5px;"><br>
+<input [(ngModel)]="ques.option3" name="option3" type="text" placeholder="Option 3" style="margin: 5px;">
+<input [(ngModel)]="ques.option4" name="option4" type="text" placeholder="Option 4" style="margin: 5px;"><br>
+<input [(ngModel)]="ques.answer" name="answer" type="text" placeholder="Answer" style="margin: 5px;"><br>
+<button mat-raised-button color="primary" style="margin-top: 15px;" type="submit">Add</button>
 </div>
 </mat-card>
+</form>
+
+
+
+
+
 
