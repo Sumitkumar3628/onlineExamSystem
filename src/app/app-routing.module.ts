@@ -43,7 +43,8 @@ const routes: Routes = [
   {path:'user-dashboard',component:UserDashboardComponent},
   {path:'new-exam',component:SelectExamComponent},
   {path:'start-exam',component:StartExamComponent},
-  {path:'load-quiz',component:LoadQuizComponent}
+  {path:'load-quiz',component:LoadQuizComponent},
+  {path:'start',component:StartExamComponent}//use path:'start'/:qid for taking entire ques of quiz of particular category
 ];
 
 @NgModule({

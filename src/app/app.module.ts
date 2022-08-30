@@ -32,6 +32,7 @@ import { StartExamComponent } from './pages/user/start-exam/start-exam.component
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { GetQuestionsComponent } from './services/get-questions/get-questions.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { GetQuestionsComponent } from './services/get-questions/get-questions.co
     SelectExamComponent,
     StartExamComponent,
     LoadQuizComponent,
-    GetQuestionsComponent
+    GetQuestionsComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
