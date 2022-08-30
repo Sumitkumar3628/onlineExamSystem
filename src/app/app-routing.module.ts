@@ -13,12 +13,14 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import { SelectExamComponent } from './pages/user/user-dashboard/select-exam/select-exam.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { AdminguardGuard } from './services/adminguard.guard';
+import { UserguardGuard } from './services/userguard.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'admin',component:DashboardComponent,children:[//canActivate:[AdminGuard], //need to add to protect admin 
+  {path:'admin',component:DashboardComponent,canActivate:[AdminguardGuard],children:[//canActivate:[AdminGuard], //need to add to protect admin 
     {
       path:'',
       component:WelcomeComponent
@@ -40,11 +42,11 @@ const routes: Routes = [
     component:ViewReportComponent
   }
 ]},
-  {path:'user-dashboard',component:UserDashboardComponent},
-  {path:'new-exam',component:SelectExamComponent},
-  {path:'start-exam',component:StartExamComponent},
-  {path:'load-quiz',component:LoadQuizComponent},
-  {path:'start',component:StartExamComponent}//use path:'start'/:qid for taking entire ques of quiz of particular category
+  {path:'user-dashboard',component:UserDashboardComponent,canActivate:[UserguardGuard]},
+  {path:'new-exam',component:SelectExamComponent,canActivate:[UserguardGuard]},
+  {path:'start-exam',component:StartExamComponent,canActivate:[UserguardGuard]},
+  {path:'load-quiz',component:LoadQuizComponent,canActivate:[UserguardGuard]},
+  {path:'start',component:StartExamComponent,canActivate:[UserguardGuard]}//use path:'start'/:qid for taking entire ques of quiz of particular category
 ];
 
 @NgModule({

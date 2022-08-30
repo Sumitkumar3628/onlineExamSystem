@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   checkLogIn:boolean;
   
-  constructor(public logSer:LoginService) { 
+  constructor(public loginser:LoginService) { 
      
   }
   ngOnInit(): void { 

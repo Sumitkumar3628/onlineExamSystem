@@ -67,6 +67,8 @@ export class LoginComponent implements OnInit {
       this.u=data;
       console.log(this.u);
       console.log(typeof(this.u))
+      this.login.setUser(this.u);
+      console.log(console.log('check user'+this.login.getUser()));
       if(this.u==null){
         alert('Invalid Credentials');
         this.router.navigate(['']);
@@ -77,9 +79,16 @@ export class LoginComponent implements OnInit {
       console.log(typeof(data)+" "+data);
       if(this.role==true){
         this.router.navigate(['admin']);
+        this.login.loginUser("ADMIN");
       }else{
         this.router.navigate(['user-dashboard']);
+        this.login.loginUser("USER");
       }
+
+      const x=this.login.getUser();
+      console.log(x);
+      console.log(this.login.isLoggedIn());
+
     })
     
      

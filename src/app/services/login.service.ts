@@ -34,8 +34,9 @@ export class LoginService {
 
 
 
+
  //login user
- public loginUser(token:any){
+ public loginUser(token:string){
   if(token=="ADMIN"){
     localStorage.setItem('token',token);
     console.log(token);
@@ -52,6 +53,7 @@ export class LoginService {
 
  //isLogin : user is Logged in or not
  public isLoggedIn(){
+    console.log('token from isLoggedIn'+localStorage.getItem('token'));
     let tokenStr=localStorage.getItem('token');
     if(tokenStr=="false" || tokenStr==undefined ||tokenStr==null){
       return false;
@@ -69,7 +71,7 @@ export class LoginService {
 
  //get token from local storage
  public gettoken(){
-  return localStorage.getItem("token");
+  return localStorage.getItem('token');
  }
 
  //set userDetails
@@ -79,7 +81,7 @@ export class LoginService {
 
  //getUser
  public getUser(){
-  let userStr = localStorage.getItem("user");
+  let userStr = localStorage.getItem('user');
   if(userStr!=null){
     return JSON.parse(userStr);
   }else{
@@ -94,17 +96,15 @@ export class LoginService {
 
 
  }
- /*
- token:any;
- public checkLogin(){
-  this.token = this.gettoken();
-  if(this.token==null){
-    alert('token is null');
-    return false;
-  }else{
-    alert('token has value');
+
+ public checkAdmin(token:any){
+  if(token=="ADMIN"){
+   //console.log(token);
     return true;
   }
- }*/
+  else {
+  return false;
+ }
+ }
 
 }
