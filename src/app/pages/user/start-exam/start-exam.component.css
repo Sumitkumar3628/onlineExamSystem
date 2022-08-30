@@ -1,0 +1,5 @@
+.ins{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(189, 243, 243);
+}

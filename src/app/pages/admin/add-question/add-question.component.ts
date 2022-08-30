@@ -23,7 +23,9 @@ export class AddQuestionComponent implements OnInit {
 	option3:"",
 	option4:"",
 	answer:"",
-  quiz_qid:0
+  "quiz":{
+    "qid":0
+ }
 
   };
 
@@ -34,41 +36,41 @@ export class AddQuestionComponent implements OnInit {
   decideQuid(){
     if(this.category==23){
       if(this.level==1){
-        this.ques.quiz_qid = 24;
+        this.ques.quiz.qid = 24;
       }else if(this.level==2){
-        this.ques.quiz_qid=29;
+        this.ques.quiz.qid=29;
       }else{
-        this.ques.quiz_qid=30;
+        this.ques.quiz.qid=30;
       }
     }
 
     else if(this.category==26){
       if(this.level==1){
-        this.ques.quiz_qid=31;
+        this.ques.quiz.qid=31;
       }else if(this.level==2){
-        this.ques.quiz_qid=32;
+        this.ques.quiz.qid=32;
       }else{
-        this.ques.quiz_qid=33;
+        this.ques.quiz.qid=33;
       }
     }
 
     else if(this.category==27){
       if(this.level==1){
-        this.ques.quiz_qid=34;
+        this.ques.quiz.qid=34;
       }else if(this.level==2){
-        this.ques.quiz_qid=35;
+        this.ques.quiz.qid=35;
       }else{
-        this.ques.quiz_qid=36;
+        this.ques.quiz.qid=36;
       }
     }
 
     else if(this.category==28){
       if(this.level==1){
-        this.ques.quiz_qid=37;
+        this.ques.quiz.qid=37;
       }else if(this.level==2){
-        this.ques.quiz_qid=38;
+        this.ques.quiz.qid=38;
       }else{
-        this.ques.quiz_qid=39;
+        this.ques.quiz.qid=39;
       }
     }
 
@@ -76,7 +78,7 @@ export class AddQuestionComponent implements OnInit {
 
    submitQuestion(){
     this.decideQuid();
-    console.log(this.ques.quiz_qid)
+    console.log(this.ques.quiz.qid)
     this.quesSer.addQuestion(this.ques).subscribe((data)=>{
       console.log(data);
         alert('Question submitted successfully');
@@ -89,10 +91,6 @@ export class AddQuestionComponent implements OnInit {
       })
       //alert("Something went wrong");
     })
-    console.log(this.ques.quiz_qid);
+    console.log(this.ques.quiz.qid);
    }
-
-   
-   
-
 }

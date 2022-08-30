@@ -7,5 +7,8 @@ export class question{
 	option3:string="";
 	option4:string="";
 	answer:string="";
+	"quiz":{
+		"qid":number;
+	 }
     
 }

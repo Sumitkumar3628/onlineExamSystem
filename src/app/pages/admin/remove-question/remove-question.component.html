@@ -1,22 +1,35 @@
 <h1>Remove Question</h1>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-card>
+                <h4>Select Category</h4>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="23"> Java</mat-radio-button>
+                    <mat-radio-button value="26"> Sql</mat-radio-button>
+                    <mat-radio-button value="27"> Python</mat-radio-button>
+                    <mat-radio-button value="28"> C</mat-radio-button>
+                  </mat-radio-group>
+                </mat-card>
+        </div>
+        <div class="col-md-6">
+            <mat-card >
+                <mat-radio-group aria-label="Select an option">
+                    <h4>Select Label</h4>
+                    <mat-radio-button value="1">Level 1</mat-radio-button>
+                    <mat-radio-button value="2"> Level 2</mat-radio-button>
+                    <mat-radio-button value="3">Level 3</mat-radio-button>
+                  </mat-radio-group>
+             </mat-card>
+        </div>
+    </div>
+</div> -->
+<br>
+
 <mat-card>
-    <u><h3>Select Category</h3></u>
-  <input type="radio" id="java" name="category" value="Java">
-  <label for="java">Java</label>
-
-  <input type="radio" id="SQL" name="category" value="SQL">
-  <label for="SQL">SQL</label>
-
-<input type="radio" id="Python" name="category" value="Python" style="margin: 5px;">
-  <label for="SQL">Python</label>
-
-<input type="radio" id="C" name="category" value="C">
-  <label for="C">C</label>
-</mat-card><br>
-
-<mat-card>
+    <h3>Enter Question No to delete</h3>
     <div class="component" >
-    <input type="text" placeholder="Question No" style="margin: 5px;"><br>
-    <button mat-raised-button color="primary" style="margin-top: 15px;">Remove</button>
+    <input type="text" #ques placeholder="Question No" style="margin: 5px;"><br>
+    <button (click)="removeQuesNo(ques.value)" mat-raised-button color="primary" style="margin-top: 15px;">Remove</button>
     </div>
     </mat-card>
