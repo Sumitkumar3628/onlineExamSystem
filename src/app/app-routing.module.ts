@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { ReportComponent } from './pages/user/load-quiz/report/report.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import { SelectExamComponent } from './pages/user/user-dashboard/select-exam/select-exam.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
@@ -46,8 +47,9 @@ const routes: Routes = [
   {path:'new-exam',component:SelectExamComponent,canActivate:[UserguardGuard]},
   {path:'start-exam',component:StartExamComponent,canActivate:[UserguardGuard]},
   {path:'load-quiz',component:LoadQuizComponent,canActivate:[UserguardGuard]},
-  {path:'start',component:StartExamComponent,canActivate:[UserguardGuard]}//use path:'start'/:qid for taking entire ques of quiz of particular category
-];
+  {path:'start',component:StartExamComponent,canActivate:[UserguardGuard]},//use path:'start'/:qid for taking entire ques of quiz of particular category
+  {path:'report',component:ReportComponent,canActivate:[UserguardGuard]}
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

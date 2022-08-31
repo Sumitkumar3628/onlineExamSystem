@@ -9,14 +9,16 @@ import { LoginService } from 'src/app/services/login.service';
 export class HeaderComponent implements OnInit {
 
   checkLogIn:boolean;
-  
+  firstname:any;
   constructor(public loginser:LoginService) { 
-     
   }
   ngOnInit(): void { 
+
+    
+
   }
   
-  
+  //getUser()
 
 
 

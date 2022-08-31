@@ -68,12 +68,23 @@ export class LoginComponent implements OnInit {
       console.log(this.u);
       console.log(typeof(this.u))
       this.login.setUser(this.u);
+
+      let entries = Object.entries(data);
+      console.log("checking entries,",entries);
+      console.log(entries[0][1]);
+      localStorage.setItem('uid',JSON.stringify(entries[0][1]));
+      localStorage.setItem('uname',JSON.stringify(entries[1][1]));
+      localStorage.setItem('firstname',JSON.stringify(entries[3][1]));
       console.log(console.log('check user'+this.login.getUser()));
       if(this.u==null){
         alert('Invalid Credentials');
         this.router.navigate(['']);
       }
     })
+
+    //localStorage.setItem('username',this.u.username);
+    //localStorage.setItem('uid',this.u.id);
+
     this.login.isAdmin(this.loginData).subscribe((data)=>{
       this.role = data;
       console.log(typeof(data)+" "+data);
@@ -89,11 +100,7 @@ export class LoginComponent implements OnInit {
       console.log(x);
       console.log(this.login.isLoggedIn());
 
-    })
-    
-     
-     
-        
+    })    
   },
   (error) =>
   {

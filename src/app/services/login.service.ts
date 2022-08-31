@@ -66,6 +66,7 @@ export class LoginService {
  public logout(){
   localStorage.removeItem('token');
   localStorage.removeItem('user');
+  localStorage.clear();
   return true;
  }
 
@@ -105,6 +106,15 @@ export class LoginService {
   else {
   return false;
  }
+ }
+
+ firstName:any;
+
+ public getUserName(){
+  //console.log("from getUserName : "+localStorage.getItem('fistname'));
+  //this.firstName = JSON.stringify(localStorage.getItem('fistname')); 
+  //console.log(localStorage.getItem('firstname'));
+  return localStorage.getItem('firstname');
  }
 
 }

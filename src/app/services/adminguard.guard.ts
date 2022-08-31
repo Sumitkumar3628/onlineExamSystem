@@ -15,7 +15,7 @@ export class AdminguardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let token=this.login.gettoken();
       if(this.login.isLoggedIn() && this.login.checkAdmin(token)){
-      alert('guard');
+      //alert('guard');
         return true;
     }
     this.router.navigate(['login']);   

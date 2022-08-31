@@ -1,6 +1,5 @@
 export class questions{
 
-    qid:number;
-	givenAnswer:number;
+	givenAnswer:any;
     
 }

@@ -15,11 +15,11 @@ export class AddQuestionComponent implements OnInit {
   category:number;
   level:number;
 
-  public ques={
+  public ques={ 
   content:"",
 	image:"",
 	option1:"",
-	option2:"",
+	option2:"", 
 	option3:"",
 	option4:"",
 	answer:"",

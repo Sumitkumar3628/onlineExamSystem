@@ -16,7 +16,7 @@ export class UserguardGuard implements CanActivate {
     
       let token=this.login.gettoken();
       if(this.login.isLoggedIn() && !this.login.checkAdmin(token)){
-      alert('guard');
+      //alert('guard');
         return true;
     }
     this.router.navigate(['login']);   
