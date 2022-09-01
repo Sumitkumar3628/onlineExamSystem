@@ -19,13 +19,13 @@ export class RemoveQuestionComponent implements OnInit {
 
       if(result){
 
-        console.log(val);
+        //console.log(val);
         this.quesNo=val;
         this.remQuesSer.removeQuestion(this.quesNo).subscribe((data)=>{
-          console.log(data);
+          //console.log(data);
           alert("Question removed successfully!!");
         },(error)=>{
-          console.log(error);
+          //console.log(error);
           alert("Something went wrong")
         })
 

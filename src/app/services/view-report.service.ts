@@ -24,9 +24,15 @@ export class ViewReportService {
     return this.httpSer.get(this.baseURL+'/city/'+city);
   }
 
-  //search by status
-  public findByStatus(passed:string){
+  //search by status if paased
+  public findByStatusPassed(passed:string){
     return this.httpSer.get(this.baseURL+'/'+passed);
   }
+
+  //search by status if failed
+  public findByStatus(failed:string){
+    return this.httpSer.get(this.baseURL+'/'+failed);
+  }
+
 
 }

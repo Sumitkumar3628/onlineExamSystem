@@ -14,8 +14,8 @@ export class SelectExamComponent implements OnInit {
   }
 
   javaSelect(){
-    console.log('javaSelect called')
-    alert('java select'+this.catIdSer.sendCategoryId(23));
+    //console.log('javaSelect called')
+    //alert('java select'+this.catIdSer.sendCategoryId(23));
     this.catIdSer.sendCategoryId(23);
     sessionStorage.setItem("catId","23");
   }

@@ -1,10 +1,16 @@
-<p>load-quiz works!</p>
 <div class="bootstrap-wrapper">
     <div class="container-fluid">
         <div class="row">
         <div class="col-md-2">
             <!-- Instructions -->
-            <h3>Instruction</h3>
+            <mat-card style="margin-top: 70px;">
+                <h3 style="margin-left: 45px;"><u>Instructions</u></h3>
+                <ul>
+                    <li>Each question carries 10 marks</li>
+                    <li>No negative marking</li>
+                
+                </ul>
+            </mat-card>
         </div>
         <div class="col-md-8">
                 <!-- questions -->
@@ -67,7 +73,24 @@
         </div>
         <div class="col-md-2">
             <!-- progress -->
-            <h3>progress</h3>
+            <!-- <h3>progress</h3> -->
+            <mat-card style="margin-top: 70px;">
+                <mat-card-header>
+                    <mat-card-title>Progress</mat-card-title>
+                    <mat-card-subtitle>
+                        Quiz will automatically submitted when timer reachs to <b>0:0</b> <br><br><b style="margin-left: 25px;">{{getFormatedTime()}}</b>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-spinner
+                        mode="determinate"
+                        color="primary"
+                        style="margin: auto;"
+                        [value]="(timer/(this.qlist.length*1*60))*100"
+                    ></mat-spinner>
+                </mat-card-content>
+            </mat-card>
+            
         </div>
     </div>
 </div>

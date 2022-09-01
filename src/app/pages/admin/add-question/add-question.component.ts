@@ -85,12 +85,12 @@ export class AddQuestionComponent implements OnInit {
     },
     (error) =>{
       //error
-      console.log(error);
+      //console.log(error);
       this.snack.open("Something went wrong",'',{
         duration:2000
       })
       //alert("Something went wrong");
     })
-    console.log(this.ques.quiz.qid);
+    //console.log(this.ques.quiz.qid);
    }
 }

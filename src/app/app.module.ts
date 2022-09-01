@@ -34,6 +34,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import { GetQuestionsComponent } from './services/get-questions/get-questions.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { ReportComponent } from './pages/user/load-quiz/report/report.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,8 @@ import { ReportComponent } from './pages/user/load-quiz/report/report.component'
     LoadQuizComponent,
     GetQuestionsComponent,
     StartComponent,
-    ReportComponent
+    ReportComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,9 @@ import { ReportComponent } from './pages/user/load-quiz/report/report.component'
     HttpClientModule,
     MatListModule,
     MatSnackBarModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent]

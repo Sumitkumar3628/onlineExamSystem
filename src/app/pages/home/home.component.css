@@ -1,11 +1,16 @@
 #welcome{
-    background-image :linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),  URL("../../../assets/img3.jpg");
+    /*background-image :URL("../../../assets/img343.jpg");*/
     background-size: cover;
+    background-color: white;
 }
 .header{
-    color: white;
+    color: #3F51B5;
     text-decoration: solid;
     font-size: 100px;
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Vollkorn', serif;
+}
+h1{
+    font-family: 'Vollkorn', serif;
+    font-size: 50px;
 }

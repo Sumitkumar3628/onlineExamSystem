@@ -10,7 +10,7 @@
   <option value="Python">Python</option>
   <option value="C">C</option>
 </select><br><br>
-{{category}}
+<!-- {{category}} -->
 <button mat-raised-button color="primary" type="submit" (click)="findByCategory()">Find</button>
 </mat-card>
 
@@ -47,14 +47,14 @@
 
 <select id="Status" [(ngModel)]="status">
   <option value="passed">Pass</option>
-  <option value="Fail">Fail</option>
+  <option value="failed">Fail</option>
 </select><br><br>
 <button mat-raised-button color="primary" type="submit" (click)="findByStatus()">Find</button>
 </mat-card>
 </mat-card>
 
 <mat-card>
-  <table class="table text-center" style="border: 2px solid blue;">
+  <table class="text-center">
     <thead style="border: 2px solid blue;">
         <th>Username</th>
         <th>FirstName</th>
@@ -82,3 +82,9 @@
     </tr>
 </table>
 </mat-card>
+
+
+
+
+
+

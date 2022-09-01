@@ -25,6 +25,7 @@ export class LoadQuizComponent implements OnInit {
   cid:any;
   qid:number;
   userid:number;
+  timer:any;
 
   category:string;
   marksGot=0;
@@ -44,14 +45,17 @@ export class LoadQuizComponent implements OnInit {
     //getting qid from senCatIdService
     //let cid = this.route.snapshot.params["catId"];
     this.cid = sessionStorage.getItem("catId");
-    console.log(typeof(this.cid));
-    console.log(this.cid)
+    //console.log(typeof(this.cid));
+    //console.log(this.cid)
     this.getqid();
     this.catIdSer.cid$.subscribe((CategoryId)=>this.cid=CategoryId)
-    console.log(this.cid)
+    //console.log(this.cid)
     this.quesSer.getQuestions(this.qid).subscribe((data)=>{
       this.qlist=data;
-      console.log(this.qlist);
+      //console.log(this.qlist);
+      //for timer
+      this.timer = this.qlist.length*1*60;
+      this.startTimer()
     }) 
 
     console.log("From load-quizComponent : "+localStorage.getItem('user'));
@@ -198,4 +202,21 @@ export class LoadQuizComponent implements OnInit {
 
   }
 
+  startTimer(){
+    let t:any = window.setInterval(()=>{
+      //code
+      if(this.timer<=0){
+        this.submitQuiz();
+        clearInterval(t);
+      }else{
+        this.timer--;
+      }
+    },500)
+  }
+
+  getFormatedTime(){
+    let mm = Math.floor(this.timer/60);
+    let ss = this.timer - mm*60;
+    return `${mm} min : ${ss} sec`; 
+  }
 }
