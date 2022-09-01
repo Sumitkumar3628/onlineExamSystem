@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewReportService } from 'src/app/services/view-report.service';
+import { user } from 'src/app/user';
 
 @Component({
   selector: 'app-view-report',
@@ -7,9 +9,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewReportComponent implements OnInit {
 
-  constructor() { }
+  constructor(private viewRepSer:ViewReportService) { }
 
   ngOnInit(): void {
+  }
+
+  category:string;
+  state:string;
+  city:string;
+  status:string;
+  ulist:any;
+
+  public findByCategory(){
+    this.viewRepSer.findByCat(this.category).subscribe((data)=>{
+      console.log(data);
+      this.ulist = data;
+    },()=>{
+      alert("Something Went wrong.");
+    })
+  }
+
+  public findByState(){
+    this.viewRepSer.findByState(this.state).subscribe((data)=>{
+      this.ulist = data;
+    },()=>{
+      alert("Something went wrong.")
+    })
+  }
+  public findByCity(){
+    this.viewRepSer.findByCity(this.city).subscribe((data)=>{
+      this.ulist=data;
+    },()=>{
+      alert("Something went wrong.")
+    })
+
+  }
+  public findByStatus(){
+    this.viewRepSer.findByStatus(this.status).subscribe((data)=>{
+      this.ulist = data;
+    },()=>{
+      alert("Something went wrong.");
+    })
+
   }
 
 }

@@ -12,5 +12,5 @@ export class user
     state:string;
     qualification:string;
     year_of_completion:string;
-    dob:string;
+    dob:string; 
 }

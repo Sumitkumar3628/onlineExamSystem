@@ -1,40 +1,84 @@
 <mat-card><h2>Search Student</h2></mat-card>
 <br>
 <mat-card>
+  <mat-card style="margin: 5px;">
 <label for="cars">Select By Technology:</label>
 
-<select id="Technology">
-  <option value="Java">Java</option>
+<select id="Category" [(ngModel)]="category">
+  <option value="JAVA">Java</option>
   <option value="SQL">SQL</option>
   <option value="Python">Python</option>
   <option value="C">C</option>
 </select><br><br>
+{{category}}
+<button mat-raised-button color="primary" type="submit" (click)="findByCategory()">Find</button>
+</mat-card>
+
+<mat-card style="margin: 5px;">
 
 <label for="State">Select By State:</label>
 
-<select id="State">
+<select id="State" [(ngModel)]="state">
   <option value="Maharasthra">Maharasthra</option>
   <option value="West Bengal">West Bengal</option>
   <option value="Haryana">Haryana</option>
   <option value="Bihar">Bihar</option>
   <option value="Jharkhand">Jharkhand</option>
 </select><br><br>
+<button mat-raised-button color="primary" type="submit" (click)="findByState()">Find</button>
+</mat-card>
 
+<mat-card style="margin: 5px;">
 <label for="State">Select by City:</label>
 
-<select id="City">
+<select id="City" [(ngModel)]="city">
   <option value="Mumbai">Mumbai</option>
   <option value="Kolkata">Kolkata</option>
   <option value="Faridabad">Faridabad</option>
   <option value="Patna">Patna</option>
+  <option value="Gaya">Gaya</option>
   <option value="Ranchi">Ranchi</option>
 </select><br><br>
+<button mat-raised-button color="primary" type="submit" (click)="findByCity()">Find</button>
+</mat-card>
 
+<mat-card style="margin: 5px;">
 <label for="State">Select by Status:</label>
 
-<select id="Status">
-  <option value="Pass">Pass</option>
+<select id="Status" [(ngModel)]="status">
+  <option value="passed">Pass</option>
   <option value="Fail">Fail</option>
 </select><br><br>
+<button mat-raised-button color="primary" type="submit" (click)="findByStatus()">Find</button>
+</mat-card>
+</mat-card>
 
+<mat-card>
+  <table class="table text-center" style="border: 2px solid blue;">
+    <thead style="border: 2px solid blue;">
+        <th>Username</th>
+        <th>FirstName</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Qualification</th>
+        <th>Completion Year</th>
+
+    </thead>
+    <tr style="border: 2px solid blue;" *ngFor="let u of ulist">
+      <td>{{u.username}}</td>
+      <td>{{u.firstName}}</td>
+      <td>{{u.middleName}}</td>
+      <td>{{u.lastName}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.phone}}</td>
+      <td>{{u.city}}</td>
+      <td>{{u.state}}</td>
+      <td>{{u.qualification}}</td>
+      <td>{{u.year_of_completion}}</td>
+    </tr>
+</table>
 </mat-card>
