@@ -39,7 +39,7 @@ export class LoginService {
  public loginUser(token:string){
   if(token=="ADMIN"){
     localStorage.setItem('token',token);
-    console.log(token);
+    //console.log(token);
     return true;
   }
   if(token=="USER"){
@@ -53,7 +53,7 @@ export class LoginService {
 
  //isLogin : user is Logged in or not
  public isLoggedIn(){
-    console.log('token from isLoggedIn'+localStorage.getItem('token'));
+    //console.log('token from isLoggedIn'+localStorage.getItem('token'));
     let tokenStr=localStorage.getItem('token');
     if(tokenStr=="false" || tokenStr==undefined ||tokenStr==null){
       return false;

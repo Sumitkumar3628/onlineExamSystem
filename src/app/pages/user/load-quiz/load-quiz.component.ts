@@ -148,7 +148,7 @@ export class LoadQuizComponent implements OnInit {
   res:string;
 
   submitQuiz(){
-    console.log(this.userAnswer);
+    //console.log(this.userAnswer);
     for (let i = 0; i < this.userAnswer.length; i++) {
       this.totalMarks = this.totalMarks+10;
       if(this.userAnswer[i]==this.qlist[i].answer){
@@ -156,10 +156,10 @@ export class LoadQuizComponent implements OnInit {
       }
     }
     this.percentage = (this.marks/this.totalMarks)*100;
-    console.log(this.marks);
-    console.log(this.percentage);
+    //console.log(this.marks);
+    //console.log(this.percentage);
     sessionStorage.setItem('percent','100');
-    console.log(sessionStorage.getItem('percent'));
+    //console.log(sessionStorage.getItem('percent'));
 
     //this.repSer.addReport();
 
@@ -188,7 +188,7 @@ export class LoadQuizComponent implements OnInit {
     this.report.user.id = Number(localStorage.getItem('uid'));
     
 
-    console.log("REPORT CARD : "+this.report.name);
+    //console.log("REPORT CARD : "+this.report.name);
 
     this.repSer.addReport(this.report).subscribe((data)=>{
         alert("Report submitted successfully.")
@@ -211,7 +211,7 @@ export class LoadQuizComponent implements OnInit {
       }else{
         this.timer--;
       }
-    },500)
+    },1000)
   }
 
   getFormatedTime(){

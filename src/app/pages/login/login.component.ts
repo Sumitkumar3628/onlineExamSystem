@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
     //  console.log(this.abc);
     this.login.getUserDetails(this.loginData).subscribe((data)=>{
       this.u=data;
-      console.log(this.u);
+      //console.log(this.u);
       console.log(typeof(this.u))
       this.login.setUser(this.u);
 

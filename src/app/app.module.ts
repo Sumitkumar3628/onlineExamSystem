@@ -37,6 +37,7 @@ import { ReportComponent } from './pages/user/load-quiz/report/report.component'
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategoryComponent } from './pages/admin/category/category.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FooterComponent } from './components/footer/footer.component';
     GetQuestionsComponent,
     StartComponent,
     ReportComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
